@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Test</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Teste da API de Piadas</h1>
+        
+        <div class="form-group">
+            <label for="language">Selecione o Idioma:</label>
+            <select id="language">
+                <option value="pt-br">Português</option>
+                <option value="en">Inglês</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="level">Selecione o Nível da Piada:</label>
+            <select id="level">
+                <option value="low">Baixo</option>
+                <option value="medium">Médio</option>
+                <option value="high">Alto</option>
+            </select>
+        </div>
+        
+        <button onclick="fetchJoke()">Buscar Piada</button>
+        
+        <div class="response">
+            <pre id="response"></pre>
+        </div>
+    </div>
+
+    <script>
+        function fetchJoke() {
+            const language = document.getElementById('language').value;
+            const level = document.getElementById('level').value;
+            
+            const url = `http://localhost:5000/joke?level=${level}`;
+            const headers = new Headers();
+            headers.append('Accept-Language', language);
+
+            fetch(url, { headers: headers })
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('response').textContent = JSON.stringify(data, null, 2);
+                })
+                .catch(error => {
+                    document.getElementById('response').textContent = 'Erro: ' + error;
+                });
+        }
+    </script>
+</body>
+</html>

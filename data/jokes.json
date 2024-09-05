@@ -1,0 +1,12 @@
+{
+    "en": {
+        "low": ["Why do programmers prefer dark mode? Because the light attracts bugs."],
+        "medium": ["How many programmers does it take to change a light bulb? None, that's a hardware problem."],
+        "high": ["A SQL query walks into a bar, walks up to two tables and asks: Can I join you?"]
+    },
+    "pt-br": {
+        "low": ["Por que os programadores preferem o modo escuro? Porque a luz atrai bugs."],
+        "medium": ["Quantos programadores são necessários para trocar uma lâmpada? Nenhum, isso é problema de hardware."],
+        "high": ["Uma consulta SQL entra em um bar, vai até duas mesas e pergunta: Posso me juntar a vocês?"]
+    }
+}
