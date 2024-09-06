@@ -89,7 +89,6 @@ http://localhost:5000/joke
 
 ```bash
 http://localhost:5000/joke?level=low
-joke
 ```
 
 Observação:
